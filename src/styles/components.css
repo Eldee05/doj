@@ -1,0 +1,306 @@
+/* =========================================
+   Header Styles
+   ========================================= */
+
+.top-bar {
+  background: rgb(36, 36, 36);
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.main-header {
+  background: #7f8182;
+  border-bottom: 3px solid rgb(36, 36, 36);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-header__title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #003366;
+  line-height: 1.2;
+}
+
+.main-header__subtitle {
+  font-size: 13px;
+  color: #333;
+  margin-top: 2px;
+}
+
+/* =========================================
+   Navigation Bar
+   ========================================= */
+
+.navbar {
+  background: rgb(36, 36, 36);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 200;
+}
+
+.navbar__btn {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.navbar__btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(36, 36, 36);
+  min-width: 250px;
+  z-index: 300;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown__item {
+  display: block;
+  padding: 6px 12px;
+  color: rgb(255, 255, 256);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.dropdown__item:hover {
+  background: rgb(60, 59, 59);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+}
+
+/* =========================================
+   Login Panel
+   ========================================= */
+
+.login-panel {
+  display: grid;
+  border: 1px solid rgb(36, 36, 36);
+  background: #f0f4f8;
+  margin-bottom: 12px;
+}
+
+.login-panel__header {
+  background: rgb(36, 36, 36);
+  color: #fff;
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.login-panel__body {
+  padding: 10px;
+}
+
+.login-panel__field {
+  margin-bottom: 8px;
+}
+
+.login-panel__label {
+  display: grid;
+  font-size: 12px;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.login-panel__input {
+  width: 100%;
+  padding: 3px 5px;
+  border: 1px solid #999;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.login-panel__input--error {
+  border-color: red;
+}
+
+.login-panel__error {
+  color: red;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.login-panel__btn {
+  background: rgb(53, 58, 64);
+  color: #fff;
+  border: none;
+  padding: 5px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.login-panel__btn:hover {
+  background: rgb(198, 175, 121);
+}
+
+.login-panel__link {
+  display: block;
+  font-size: 12px;
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+/* =========================================
+   Email Notification Panel
+   ========================================= */
+
+.email-panel {
+  width: 100%;
+  border: 1px solid #003366;
+  background: #f0f4f8;
+  margin-bottom: 12px;
+}
+
+.email-panel__body {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.email-panel__title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.email-panel__link {
+  color: #003366;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.email-panel__note {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #555;
+}
+
+.email-panel__form {
+  margin-top: 8px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.email-panel__form p {
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.email-panel__form input {
+  width: 100%;
+  padding: 3px 5px;
+  border: 1px solid #999;
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.email-panel__submit {
+  background: rgb(36, 36, 36);
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.email-panel__cancel {
+  background: #999;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* =========================================
+   Main Content / Sections
+   ========================================= */
+
+.section-heading {
+  background: rgb(36, 36, 36);
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+  margin-top: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.sub-heading {
+  color: rgb(36, 36, 36);
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 6px;
+  margin-top: 12px;
+  border-bottom: 1px solid #003366;
+  padding-bottom: 2px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* =========================================
+   Footer Info Box
+   ========================================= */
+
+.footer-info-box {
+  border: 1px solid rgb(36, 36, 36);
+  background: #f0f4f8;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.footer-info-box p {
+  margin: 0 0 4px;
+  font-size: 13px;
+}
+
+.page-footer {
+  background: rgb(36, 36, 36);
+  color: #cdd8e8;
+  padding: 12px 16px;
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.page-footer a {
+  color: #aac4e8;
+  margin-right: 12px;
+}
+
+.page-footer__links {
+  margin-bottom: 6px;
+}

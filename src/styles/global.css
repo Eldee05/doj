@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  min-height: 100vh;
+}
+
+a {
+  color: rgb(36, 36, 36);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #00509e;
+}
+
+ul,
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 4px;
+  font-size: 13px;
+  line-height: 1.6;
+  font-family: "Times New Roman", Times, serif;
+}
+
+p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+input:focus {
+  outline: 2px solid #003366;
+}
+
+button:focus {
+  outline: 30px #1d1c16;
+  border-radius: 10px solid #1d1c16;
+}
+
+/* =========================================
+   Layout
+   ========================================= */
+
+.app-wrapper {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.main-content-area {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 640px) {
+  .left-sidebar {
+    flex: 1 1 100% !important;
+    margin-right: 0 !important;
+  }
+
+  .right-content {
+    flex: 1 1 100% !important;
+  }
+}
