@@ -6,6 +6,7 @@
   background: rgb(36, 36, 36);
   color: #fff;
   padding: 4px 10px;
+
   font-size: 12px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +15,7 @@
 }
 
 .main-header {
-  background: #626e74;
+  background: rgba(0, 0, 0, 0.863);
   border-bottom: 3px solid rgb(36, 36, 36);
   padding: 8px 16px;
   display: flex;
@@ -25,13 +26,13 @@
 .main-header__title {
   font-weight: bold;
   font-size: 20px;
-  color: #003366;
+  color: rgba(238, 238, 238, 0.995);
   line-height: 1.2;
 }
 
 .main-header__subtitle {
   font-size: 13px;
-  color: #333;
+  color: #928b8b;
   margin-top: 2px;
 }
 
@@ -70,7 +71,7 @@
   top: 100%;
   left: 0;
   background: rgb(36, 36, 36);
-  min-width: 250px;
+  min-width: 230px;
   z-index: 300;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
@@ -99,6 +100,7 @@
    ========================================= */
 
 .login-panel {
+  width: 230px;
   display: grid;
   border: 1px solid rgb(36, 36, 36);
   background: #f0f4f8;
@@ -175,7 +177,7 @@
    ========================================= */
 
 .email-panel {
-  width: 100%;
+  width: 230px;
   border: 1px solid #003366;
   background: #f0f4f8;
   margin-bottom: 12px;
@@ -303,4 +305,61 @@
 
 .page-footer__links {
   margin-bottom: 6px;
+}
+
+.accordion {
+  margin-bottom: 4px;
+}
+
+.accordion__header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(36, 36, 36);
+  color: #fff;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.accordion__header:hover {
+  background: rgb(36, 36, 36);
+}
+
+.accordion__header--open {
+  background: rgb(36, 36, 36);
+}
+
+.accordion__icon {
+  font-size: 11px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.accordion__body {
+  border: 1px solid rgb(36, 36, 36);
+  border-top: none;
+  padding: 12px 14px 6px;
+  background: #fff;
+  animation: accordionOpen 0.18s ease;
+}
+
+@keyframes accordionOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
