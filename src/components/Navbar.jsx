@@ -1,6 +1,7 @@
 // components/Navbar.jsx
 // Navigation bar with Related Links and Victim Rights dropdowns
-
+{
+  /*
 import { useState } from "react";
 import "../styles/components.css";
 
@@ -35,7 +36,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar" aria-label="Main navigation">
-        {/* Related Links */}
+        Related Links /}
         <div className="dropdown">
           <button
             className="navbar__btn"
@@ -63,7 +64,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Victim Rights */}
+        {/* Victim Rights /}
         <div className="dropdown">
           <button
             className="navbar__btn"
@@ -90,10 +91,12 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Click-outside overlay to close dropdowns */}
+      {/* Click-outside overlay to close dropdowns /}
       {(relatedOpen || victimsRightsOpen) && (
         <div className="overlay" onClick={closeAll} aria-hidden="true" />
       )}
     </>
   );
+}
+*/
 }

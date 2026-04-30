@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  text-decoration: none;
+  text-decoration: underline;
   color: #00509e;
 }
 
@@ -44,11 +44,11 @@ p {
 }
 
 input:focus {
-  outline: 2px solid #003366;
+  outline: 2px solid #7eb5ec;
+  border-radius: 2px;
 }
 
 button:focus {
-  outline: 30px #1d1c16;
   border-radius: 10px solid #1d1c16;
 }
 
@@ -59,33 +59,67 @@ button:focus {
 .app-wrapper {
   min-height: 100vh;
   background: #fff;
+  justify-items: center;
+  display: flex;
+  margin-inline: 60px;
 }
 
 .main-content-area {
   display: flex;
-  flex-wrap: wrap;
-  max-width: 900px;
+  flex-direction: row;
+  align-items: start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1224px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 20px;
+}
+
+.left-sidebar {
+  flex: 0 0 200px;
+  width: 300px;
 }
 
 /* =========================================
    Responsive
    ========================================= */
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .main-content-area {
+    flex-direction: column;
+
+    gap: 0;
+  }
   .left-sidebar {
-    flex: 1 1 10% !important;
-    margin-right: 0 !important;
+    flex: none;
+    width: 100px;
   }
 
   .right-content {
-    flex: 1 1 50% !important;
+    width: 100%;
   }
-  .login-panel {
-    width: 600px;
+  .login-panel__card {
+    width: 100%;
   }
-  .email-panel {
-    width: 600px;
+
+  /* Header title sizes down slightly */
+  .main-header__line2 {
+    font-size: 20px;
+  }
+
+  .main-header__line3 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .main-header__line2 {
+    font-size: 16px;
+  }
+
+  .main-header__line1,
+  .main-header__line3 {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }

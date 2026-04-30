@@ -1,5 +1,5 @@
 // components/LoginPanel.jsx
-// Victim login/registration form with validation
+// Victim login/registration form — title above border box, fields inside
 
 import { useState } from "react";
 import "../styles/components.css";
@@ -25,64 +25,71 @@ export default function LoginPanel() {
 
   return (
     <div className="login-panel">
-      <div className="login-container">
-        <div className="login-panel__header">Victim Login/Registration</div>
+      {/* Title sits above the bordered card — plain bold text */}
+      <div className="login-panel__title">Victim Login/Registration</div>
 
-        <div className="login-panel__body">
-          {/* VIN field */}
-          <div className="login-panel__field">
-            <label htmlFor="vin" className="login-panel__label">
-              VIN or Verified Email:
-            </label>
-            <input
-              id="vin"
-              type="text"
-              value={vin}
-              onChange={(e) => {
-                setVin(e.target.value);
-                setVinError(false);
-              }}
-              className={`login-panel__input${vinError ? " login-panel__input--error" : ""}`}
-              autoComplete="username"
-            />
-            {vinError && (
-              <div className="login-panel__error" role="alert">
-                VIN Or Verified Email is A Required Field
-              </div>
-            )}
-          </div>
+      {/* Bordered card */}
+      <div className="login-panel__card">
+        {/* VIN field */}
+        <div className="login-panel__field">
+          <label htmlFor="vin" className="login-panel__label">
+            VIN or Verified Email:
+          </label>
+          <input
+            id="vin"
+            type="text"
+            value={vin}
+            onChange={(e) => {
+              setVin(e.target.value);
+              setVinError(false);
+            }}
+            className={`login-panel__input${vinError ? " login-panel__input--error" : ""}`}
+            autoComplete="username"
+          />
+          {vinError && (
+            <div className="login-panel__error" role="alert">
+              VIN Or Verified Email is A Required Field
+            </div>
+          )}
+        </div>
 
-          {/* PIN field */}
-          <div className="login-panel__field">
-            <label htmlFor="pin" className="login-panel__label">
-              PIN or Password:
-            </label>
-            <input
-              id="pin"
-              type="password"
-              value={pin}
-              onChange={(e) => {
-                setPin(e.target.value);
-                setPinError(false);
-              }}
-              className={`login-panel__input${pinError ? " login-panel__input--error" : ""}`}
-              autoComplete="current-password"
-            />
-            {pinError && (
-              <div className="login-panel__error" role="alert">
-                VNS Password is A Required Field
-              </div>
-            )}
-          </div>
+        {/* PIN field */}
+        <div className="login-panel__field">
+          <label htmlFor="pin" className="login-panel__label">
+            PIN or Password:
+          </label>
+          <input
+            id="pin"
+            type="password"
+            value={pin}
+            onChange={(e) => {
+              setPin(e.target.value);
+              setPinError(false);
+            }}
+            className={`login-panel__input${pinError ? " login-panel__input--error" : ""}`}
+            autoComplete="current-password"
+          />
+          {pinError && (
+            <div className="login-panel__error" role="alert">
+              VNS Password is A Required Field
+            </div>
+          )}
+        </div>
 
-          <button className="login-panel__btn" onClick={handleLogin}>
-            Login
-          </button>
+        <button className="login-panel__btn" onClick={handleLogin}>
+          Login
+        </button>
 
-          <a href="#" className="login-panel__link">
-            Forgot Password
-          </a>
-          <a href="#" className="login-panel__link">
+        <button
+          className="login-panel__btn login-panel__btn--forgot"
+          onClick={() => {}}
+        >
+          Forgot Password
+        </button>
+
+        {/* En Español centered inside card */}
+        <div className="login-panel__lang">
+          <a href="?locale=es_ES" className="login-panel__link">
             En Español
           </a>
         </div>

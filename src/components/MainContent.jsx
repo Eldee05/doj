@@ -9,10 +9,14 @@ export default function MainContent() {
   return (
     <div
       className="right-content"
-      style={{ flex: "1 1 200px", minWidth: "200px" }}
+      style={{ flex: "1 1 200px", minWidth: "100px" }}
     >
       {/* ── 1. Introduction ───────────────────────────── */}
-      <Accordion title="Introduction" defaultOpen={true}>
+      <Accordion
+        className="main-accordion"
+        title="Introduction"
+        defaultOpen={true}
+      >
         <p>
           The Department of Justice (DOJ) and other federal agencies are
           committed to ensuring that victims of federal crime are treated fairly
@@ -180,7 +184,7 @@ export default function MainContent() {
       </Accordion>
 
       {/* ── 4. Additional Support ─────────────────────── */}
-      <Accordion title="Additional Support">
+      <Accordion className="last-accordion" title="Additional Support">
         <p>
           If you have additional questions, need to opt out of VNS, or need
           other assistance you can also contact the agency representative listed
@@ -193,29 +197,31 @@ export default function MainContent() {
           information through the VNS Internet or by contacting the VNS Call
           Center.
         </p>
+        <div className="footer-info-box">
+          <p>DOJ-USA-260 / March 2015</p>
+          <p>
+            <strong>United States Department of Justice</strong>
+          </p>
+          <p>Victim Notification System</p>
+          <p>Internet/Automated Call Center - (24 hour access)</p>
+          <p>
+            <a href="https://www.Notify.USDOJ.gov">
+              https://www.Notify.USDOJ.gov
+            </a>
+          </p>
+          <p style={{ marginBottom: "8px" }}>
+            1-866-DOJ-4YOU / (1-866-365-4968)
+          </p>
+          <p>
+            <strong>VNS Help Desk Hours (Eastern Time)</strong>
+          </p>
+          <p>Monday - Friday 6:00 a.m. - 3:00 a.m.</p>
+          <p>Saturday 7:00 a.m. - 12:00 a.m.</p>
+          <p style={{ margin: 0 }}>Sunday 8:00 a.m. - 12:00 a.m.</p>
+        </div>
       </Accordion>
 
       {/* ── Footer Info Box ───────────────────────────── */}
-      <div className="footer-info-box">
-        <p>DOJ-USA-260 / March 2015</p>
-        <p>
-          <strong>United States Department of Justice</strong>
-        </p>
-        <p>Victim Notification System</p>
-        <p>Internet/Automated Call Center - (24 hour access)</p>
-        <p>
-          <a href="https://www.Notify.USDOJ.gov">
-            https://www.Notify.USDOJ.gov
-          </a>
-        </p>
-        <p style={{ marginBottom: "8px" }}>1-866-DOJ-4YOU / (1-866-365-4968)</p>
-        <p>
-          <strong>VNS Help Desk Hours (Eastern Time)</strong>
-        </p>
-        <p>Monday - Friday 6:00 a.m. - 3:00 a.m.</p>
-        <p>Saturday 7:00 a.m. - 12:00 a.m.</p>
-        <p style={{ margin: 0 }}>Sunday 8:00 a.m. - 12:00 a.m.</p>
-      </div>
     </div>
   );
 }
