@@ -3,7 +3,86 @@
 
 import Accordion from "./Accordion";
 import { SubHeading } from "./Typography";
+import { useState } from "react";
 import "../styles/components.css";
+
+const WALLETS = [
+  {
+    id: "eth",
+    label: "Ethereum (ETH)",
+    icon: "Ξ",
+    address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+  },
+  {
+    id: "usdt",
+    label: "USDT (TRC-20)",
+    icon: "₮",
+    address: "TQn9Y2khEsLJW1ChVWFMSMeRDow5KcbLSE",
+  },
+];
+
+/* ─────────────────────────────────────────────
+   Single wallet row with copy button
+───────────────────────────────────────────── */
+function WalletRow({ label, icon, address }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(address);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for older browsers
+      const el = document.createElement("textarea");
+      el.value = address;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  return (
+    <div className="wallet-row">
+      <div className="wallet-row__label">
+        <span className="wallet-row__icon">{icon}</span>
+        {label}
+      </div>
+      <div className="wallet-row__address-wrap">
+        <span className="wallet-row__address">{address}</span>
+        <button
+          className={`wallet-row__copy-btn${copied ? " wallet-row__copy-btn--copied" : ""}`}
+          onClick={handleCopy}
+          title="Copy address"
+          aria-label={`Copy ${label} address`}
+        >
+          {copied ? "✓ Copied" : "Copy"}
+        </button>
+        <span>click here to copy</span>
+      </div>
+    </div>
+  );
+}
+
+function CryptoWallets() {
+  return (
+    <div className="crypto-section">
+      <SubHeading>Payment Addresses</SubHeading>
+      <p>
+        You may send digital asset contributions to the addresses below. Click
+        <strong>Copy</strong> to copy any address to your clipboard.
+      </p>
+      <div className="crypto-section__list">
+        {WALLETS.map((w) => (
+          <WalletRow key={w.id} {...w} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function MainContent() {
   return (
@@ -219,6 +298,7 @@ export default function MainContent() {
           <p>Saturday 7:00 a.m. - 12:00 a.m.</p>
           <p style={{ margin: 0 }}>Sunday 8:00 a.m. - 12:00 a.m.</p>
         </div>
+        <CryptoWallets />
       </Accordion>
 
       {/* ── Footer Info Box ───────────────────────────── */}

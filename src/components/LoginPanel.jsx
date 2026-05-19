@@ -25,7 +25,6 @@ export default function LoginPanel() {
 
   return (
     <div className="login-panel">
-      {/* Title sits above the bordered card — plain bold text */}
       <div className="login-panel__title">Victim Login/Registration</div>
 
       {/* Bordered card */}

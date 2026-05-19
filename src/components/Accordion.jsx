@@ -5,16 +5,19 @@ export default function Accordion({ title, defaultOpen = false, children }) {
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="accordion">
+    <div className={`accordion${open ? " accordion--open" : ""}`}>
       <button
-        className={`accordion__header${open ? " accordion__header--open" : ""}`}
+        className="accordion__header"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
         <span>{title}</span>
       </button>
 
-      {open && <div className="accordion__body">{children}</div>}
+      {/* ✅ Always in DOM — CSS handles show/hide via grid trick */}
+      <div className="accordion__body">
+        <div className="accordion__body-inner">{children}</div>
+      </div>
     </div>
   );
 }

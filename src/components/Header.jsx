@@ -67,20 +67,9 @@ export default function Header() {
       <div className="header-container">
         {/* Left: Seal + Title */}
         <div className="main-header__left">
-          <a
-            href="/"
-            aria-label="Go to VNS Home"
-            className="main-header__seal-link"
-          >
+          <a href="/" aria-label="Go to VNS Home" className="header-logo-link">
             <DOJSeal />
           </a>
-          <div className="main-header__titles">
-            <div className="main-header__line1">THE UNITED STATES</div>
-            <div className="main-header__line2">
-              DEPARTMENT <em>of</em> JUSTICE
-            </div>
-            <div className="main-header__line3">VICTIM NOTIFICATION SYSTEM</div>
-          </div>
         </div>
 
         {/* Right: Related Links dropdown */}
