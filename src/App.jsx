@@ -11,19 +11,18 @@ import "./styles/global.css";
 export default function App() {
   return (
     <>
-      {/* ── Top section ─────────────────────── */}
       <Header />
       <div className="app-wrapper">
-        {/* ── Two-column body ─────────────────── */}
+        {/* ── Two-column body ──*/}
         <div className="main-content-area">
           <aside
             className="left-sidebar"
             style={{
-              flex: "0 500px",
-
-              minWidth: "550px",
+              flex: "0 0 330px",
+              minWidth: "330px",
               marginRight: "10px",
               marginBottom: "20px",
+              placeItems: "center",
             }}
           >
             <div className="login-aside">
@@ -32,7 +31,6 @@ export default function App() {
             </div>
           </aside>
 
-          {/* Right column: informational content */}
           <MainContent />
         </div>
       </div>
