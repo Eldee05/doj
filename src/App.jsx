@@ -15,16 +15,7 @@ export default function App() {
       <div className="app-wrapper">
         {/* ── Two-column body ──*/}
         <div className="main-content-area">
-          <aside
-            className="left-sidebar"
-            style={{
-              flex: "0 0 330px",
-              minWidth: "330px",
-              marginRight: "10px",
-              marginBottom: "20px",
-              placeItems: "center",
-            }}
-          >
+          <aside className="left-sidebar">
             <div className="login-aside">
               <LoginPanel />
               <EmailPanel />

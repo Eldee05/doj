@@ -1,134 +1,3 @@
-/*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 14px;
-  color: #000;
-  background: #fff;
-  min-height: 100vh;
-}
-
-a {
-  color: rgb(36, 36, 36);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #00509e;
-}
-
-ul,
-ol {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 4px;
-  font-size: 13px;
-  line-height: 1.6;
-  font-family: "Times New Roman", Times, serif;
-}
-
-p {
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 10px;
-  font-family: "Times New Roman", Times, serif;
-}
-
-input:focus {
-  outline: 2px solid #7eb5ec;
-  border-radius: 2px;
-}
-
-button:focus {
-  border-radius: 10px solid #1d1c16;
-}
-
-.app-wrapper {
-  min-height: 100vh;
-  background: #fff;
-  justify-items: center;
-  display: flex;
-  margin-inline: 60px;
-}
-
-.main-content-area {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  gap: 20px;
-  width: 100%;
-  max-width: 1224px;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-}
-
-.left-sidebar {
-  flex: 0 0 200px;
-  width: 300px;
-}
-
- 
-
-@media (max-width: 768px) {
-  .main-content-area {
-    flex-direction: column;
-
-    gap: 0;
-  }
-  .left-sidebar {
-    flex: none;
-    width: 100px;
-  }
-
-  .right-content {
-    width: 100%;
-  }
-  .login-panel__card {
-    width: 100%;
-  }
-
-  
-  .main-header__line2 {
-    font-size: 20px;
-  }
-
-  .main-header__line3 {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 300px) {
-  .main-content-area {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-header__line2 {
-    font-size: 16px;
-  }
-
-  .main-header__line1,
-  .main-header__line3 {
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
-}*/
-/* =========================================
-   Reset & Base
-   ========================================= */
-
 *,
 *::before,
 *::after {
@@ -161,7 +30,6 @@ ol {
 }
 
 li {
-  margin-bottom: 4px;
   font-size: 13px;
   line-height: 1.6;
   font-family: "Times New Roman", Times, serif;
@@ -170,15 +38,14 @@ li {
 p {
   font-size: 13px;
   line-height: 1.6;
-  margin-bottom: 10px;
   font-family: "Times New Roman", Times, serif;
 }
 
 input:focus {
-  outline: 2px solid #003366;
+  outline: 2px solid #a0bedc;
 }
 button:focus-visible {
-  outline: 2px solid #a6913d;
+  outline: 2px solid #ceb44c;
 }
 
 /* =========================================
@@ -186,11 +53,67 @@ button:focus-visible {
    ========================================= */
 
 .app-wrapper {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 1rem;
+}
+
+.main-content-area {
+  width: 100%;
+  max-width: 1080px;
+  display: grid;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 2rem;
+}
+
+.left-sidebar {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  margin-inline: 5rem;
-  padding-inline: 5rem;
+  gap: 16px;
+}
+
+.login-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .main-content-area {
+    flex-direction: row; /* Switch to side-by-side */
+    align-items: flex-start; /* Align to top */
+    gap: 30px; /* Space between columns */
+  }
+
+  .left-sidebar {
+    flex: 0 0 330px; /* Fixed width: 330px */
+    width: 330px;
+    margin-right: 0;
+  }
+
+  .login-aside {
+    gap: 0; /* Remove gap between login & email panels */
+  }
+}
+
+.main-content-area {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 330px;
+  max-width: 1080px;
+  min-height: 600px;
+
+  align-items: center;
+
+  padding: 20px;
+
+  gap: 20px;
   margin-top: 5rem;
   padding-bottom: 2rem;
 }
@@ -200,296 +123,16 @@ button:focus-visible {
    Static viewport (no scroll), side-by-side
    Login = 30% | Accordion = 70% of content area
    ========================================= */
-
-@media (min-width: 1025px) {
-  html,
-  body,
-  .app-wrapper {
-    height: 100vh;
-    /* fully static — nothing scrolls */
-  }
-
+@media (min-width: 700px) {
   .main-content-area {
-    flex: 1;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    /* 40px inline margin, centered */
-    margin-inline: 40px;
-    padding-top: 20px;
+    flex-direction: column;
+
     gap: 24px;
   }
 
-  /*
-    Login panel = 30% of accordion width.
-    Let accordion = A, login = 0.3A, gap = 24px
-    0.3A + A = 100% of content area (approx, ignoring gap)
-    1.3A = 100%  →  A ≈ 76.9%  →  login ≈ 23.1%
-    We use flex-grow to let the accordion absorb the rest naturally.
-  */
-
-  /* Left sidebar: fixed at 30% of the accordion's computed width.
-     Since accordion is flex:1, we size left as a fraction relative to it. */
   .left-sidebar {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
-  /* Right accordion: takes all remaining space */
-  .right-content {
-    flex: 0 0 320px;
-    width: 320px;
-  }
-
-  /* Type scale — laptop */
-  .login-panel__title {
-    font-size: 17px;
-  }
-  .login-panel__label {
-    font-size: 12px;
-  }
-  .login-panel__input {
-    font-size: 12px;
-  }
-  .login-panel__btn {
-    font-size: 13px;
-    height: 34px;
-  }
-  .login-panel__link {
-    font-size: 12px;
-  }
-  .email-panel__title {
-    font-size: 14px;
-  }
-  .email-panel__link {
-    font-size: 12px;
-  }
-  .email-panel__note {
-    font-size: 12px;
-  }
-  .accordion__header {
-    font-size: 14px;
-    height: 44px;
-  }
-
-  /* Accordion opens DOWNWARD on laptop */
-  .accordion {
-    display: block;
-  }
-  .accordion__body {
-    border-top: none;
-    border-bottom: 1px solid #555;
-    animation: accordionDown 0.18s ease;
-  }
-}
-
-/* =========================================
-   BREAKPOINT 2 — MEDIUM / TABLET  768px–1024px
-   Scrollable, stacked: login on top, accordion below
-   ========================================= */
-
-@media (min-width: 760px) and (max-width: 1024px) {
-  html,
-  body {
-    height: auto;
-    overflow-y: auto;
-  }
-
-  .app-wrapper {
-    height: auto;
-    overflow-y: auto;
-  }
-
-  .main-content-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-inline: 10rem;
-    padding-inline: 2rem;
-    padding-top: 16px;
-    gap: 16px;
-    overflow: visible;
-  }
-
-  .right-content {
-    flex: none;
     width: 100%;
-  }
-
-  .right-content {
-    flex: none;
-    width: 100%;
-    max-width: 500px;
-  }
-
-  /* Type scale — medium */
-  .login-panel__title {
-    font-size: 20px;
-  }
-  .login-panel__label {
-    font-size: 14px;
-  }
-  .login-panel__input {
-    font-size: 14px;
-  }
-  .login-panel__btn {
-    font-size: 15px;
-    height: 40px;
-  }
-  .login-panel__link {
-    font-size: 14px;
-  }
-  .email-panel__title {
-    font-size: 18px;
-  }
-  .email-panel__link {
-    font-size: 14px;
-  }
-  .email-panel__note {
-    font-size: 14px;
-  }
-  .accordion__header {
-    font-size: 16px;
-    height: 50px;
-  }
-
-  /* Accordion opens UPWARD on medium */
-  .accordion {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .accordion__body {
-    border-top: 1px solid #555;
-    border-bottom: none;
-    animation: accordionUp 0.18s ease;
-  }
-}
-
-/* =========================================
-   BREAKPOINT 3 — MOBILE  < 768px
-   Scrollable, stacked: login on top, accordion below
-   Fonts and widths shrink further
-   ========================================= */
-
-@media (max-width: 700px) {
-  html,
-  body {
-    height: auto;
-    overflow-y: auto;
-  }
-
-  .app-wrapper {
-    height: auto;
-    margin: 2em 0;
-  }
-
-  .main-content-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-inline: 1rem; /* tighter margin on small screens */
-    padding-top: 10px;
-    gap: 12px;
-    overflow: visible;
-  }
-  .right-content {
-    flex: none;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .right-content {
-    flex: none;
-    width: 100%;
-    max-width: 400px;
-  }
-  /* Type scale — mobile (smallest) */
-  .login-panel__title {
-    font-size: 15px;
-  }
-  .login-panel__label {
-    font-size: 11px;
-  }
-  .login-panel__input {
-    font-size: 11px;
-    padding: 3px 4px;
-  }
-  .login-panel__btn {
-    font-size: 11px;
-    height: 30px;
-  }
-
-  .email-panel {
-    max-width: 300px;
-    justify-self: center;
-  }
-
-  .login-panel__link {
-    font-size: 11px;
-  }
-  .email-panel__title {
-    font-size: 13px;
-  }
-  .email-panel__link {
-    font-size: 11px;
-  }
-  .email-panel__note {
-    font-size: 11px;
-  }
-  .accordion__header {
-    font-size: 12px;
-    height: 40px;
-    padding: 0 10px;
-  }
-
-  /* Header shrinks */
-  .main-header {
-    padding: 6px 12px;
-    min-height: 70px;
-  }
-  .main-header__line2 {
-    font-size: 17px;
-  }
-  .main-header__line1,
-  .main-header__line3 {
-    font-size: 9px;
-    letter-spacing: 1px;
-  }
-
-  /* Accordion opens UPWARD on mobile */
-  .accordion {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .accordion__body {
-    border-top: 1px solid #555;
-    border-bottom: none;
-    animation: accordionUp 0.5 ease-in-out;
-  }
-}
-
-/* =========================================
-   Animations
-   ========================================= */
-
-@keyframes accordionDown {
-  from {
-    opacity: 1;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes accordionUp {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
+    min-width: 0 0 330px;
   }
 }
