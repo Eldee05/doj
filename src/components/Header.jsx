@@ -37,26 +37,26 @@ import DOJSeal from "./DOJSeal";
 import "../styles/components.css";
 
 const RELATED_LINKS = [
-  { label: "Office for Victims of Crime", url: "http://www.ojp.usdoj.gov/ovc" },
-  { label: "U.S. Department of Justice", url: "http://www.usdoj.gov" },
-  { label: "Federal Bureau of Investigation", url: "http://www.fbi.gov" },
+  { label: "Office for Victims of Crime", url: "#home" },
+  { label: "U.S. Department of Justice", url: "#home" },
+  { label: "Federal Bureau of Investigation", url: "#home" },
   {
     label: "U.S. Postal Inspection Service",
-    url: "https://postalinspectors.uspis.gov",
+    url: "#home",
   },
-  { label: "U.S. Attorneys", url: "http://www.usdoj.gov/usao/" },
-  { label: "Federal Bureau of Prisons", url: "http://www.bop.gov/" },
-  { label: "Criminal Division", url: "http://www.usdoj.gov/criminal/vns/" },
-  { label: "U.S. Parole Commission", url: "http://www.justice.gov/uspc/" },
+  { label: "U.S. Attorneys", url: "#home" },
+  { label: "Federal Bureau of Prisons", url: "#home" },
+  { label: "Criminal Division", url: "#home" },
+  { label: "U.S. Parole Commission", url: "#home" },
   {
     label: "Bureau of Alcohol, Tobacco, Firearms and Explosives",
-    url: "http://www.atf.gov/",
+    url: "#home ",
   },
   {
     label: "ICE Detainee Locator",
-    url: "https://locator.ice.gov/odls/homePage.do",
+    url: "#home",
   },
-  { label: "Privacy Policy", url: "http://www.usdoj.gov/privacy-file.htm" },
+  { label: "Privacy Policy", url: "#home" },
 ];
 
 export default function Header() {
